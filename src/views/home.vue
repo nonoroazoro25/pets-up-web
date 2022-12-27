@@ -18,7 +18,7 @@
                   </el-form-item>
                   <!-- 按钮 -->
                   <el-form-item class="btns">
-                      <el-button type="primary" @click="PetsLogin()">登录</el-button>
+                      <el-button type="primary" @click="PetsLogin()">ddd</el-button>
                       <el-button type="info">重置</el-button>
                       <p @click="getRegisterPage">没有账号？立即注册</p>
                   </el-form-item>
@@ -68,7 +68,7 @@
         }).then(({data}) => {
           if (data && data.code === 0) {
             console.log('login success');
-            this.$router.push({path: '/home'})
+            this.$router.push({ name: 'home' })
           }
         })
       }
