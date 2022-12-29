@@ -66,7 +66,7 @@
         }).then(({data}) => {
           if (data && data.code === 0) {
             console.log('login success');
-            this.$router.push({path: '/home'})
+            this.$router.push({path: '/'})
           }
         })
       }

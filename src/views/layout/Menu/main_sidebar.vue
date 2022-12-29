@@ -3,8 +3,6 @@
     <el-col :span="3">
       <h5>Pet's UP</h5>
       <el-menu
-        :background-color="black"
-        :active-text-color="white"
         default-active="2"
         class="el-menu-vertical-demo"
         @open="handleOpen"
@@ -47,9 +45,11 @@
     </el-col>
   </el-row>
   </template>
-  <script>
     
-    export default {
+  <script>
+      export default {
+
+  
       methods: {
           handleOpen(key, keyPath) {
           console.log(key, keyPath);
@@ -58,7 +58,7 @@
           console.log(key, keyPath);
           }
       }
-    }
+      }
   </script>
     
     <!-- Add "scoped" attribute to limit CSS to this component only -->
