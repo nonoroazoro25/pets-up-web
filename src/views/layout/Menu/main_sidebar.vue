@@ -43,13 +43,11 @@
         </el-submenu>
       </el-menu>
     </el-col>
-  </el-row>
+   </el-row>
   </template>
     
   <script>
       export default {
-
-  
       methods: {
           handleOpen(key, keyPath) {
           console.log(key, keyPath);
@@ -63,7 +61,6 @@
     
     <!-- Add "scoped" attribute to limit CSS to this component only -->
   <style scoped>
-  
   
   </style>
     

@@ -3,7 +3,7 @@
         <div class="menu">
             <Menu :isCollapse="isCollapse"></Menu>
         </div>
-        <div class="content">
+        <div>
             <Content></Content>
         </div>
     </div>    
@@ -30,7 +30,7 @@ export default {
 .menu{
         position: fixed;
         left: 0;
-        top:0;
+        top: 70px;
         bottom: 0;
         width: 200px;
         background: #999;

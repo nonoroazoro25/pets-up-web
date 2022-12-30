@@ -1,19 +1,35 @@
 <template>
     <div>
         <!-- 顶部区域 -->
-        <div class="header">
+        <!-- <div class="header"> -->
             <!-- <div class="icon">
                 <i class="el-icon-caret-left"></i>
                 <i class="el-icon-caret-right"></i>
             </div> -->
-            <div class="header-right">
+            <!-- <div class="header-right">
                 <span>当前时间:</span>
                 <span>欢迎:</span>
-            </div>
-        </div>
+            </div> -->
+        <!-- </div> -->
+        <el-menu
+            class="site-navbar__menu site-navbar__menu--right"
+            mode="horizontal">
+        
+            <el-menu-item index="1">
+                <template slot="title">
+                    <el-badge value="new">
+                    <icon-svg name="shezhi" class="el-icon-setting"></icon-svg>
+                    </el-badge>
+                </template>
+            </el-menu-item>
+
+        </el-menu>
 
         <!-- 内容区域 -->
-        <router-view></router-view>
+        <div class="content">
+            <router-view></router-view>
+        </div>
+        
     </div>    
 </template>
   
@@ -24,6 +40,7 @@
 </script>
 
 <style scoped>
+
 .header{
     background: skyblue;
     height: 50px;
@@ -40,6 +57,9 @@
     flex:1;
     text-align:right;
     padding-right:20px;
+}
+.content{
+    padding-left:200px;
 }
 
 </style>
