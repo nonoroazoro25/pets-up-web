@@ -30,10 +30,10 @@ export default {
 .menu{
         position: fixed;
         left: 0;
-        top: 70px;
+        top: 85px;
         bottom: 0;
         width: 200px;
-        background: #999;
+        background: #A6BB8D;
     }
 
 .content{

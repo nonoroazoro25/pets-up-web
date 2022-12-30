@@ -3,7 +3,7 @@
       <el-menu 
             default-active="/" 
             router
-            background-color="#545c64"
+            background-color="#3C6255"
             text-color="#fff"
             active-text-color="#ffd04b"
             >

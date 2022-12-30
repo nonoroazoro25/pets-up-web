@@ -1,29 +1,17 @@
 <template>
     <div>
         <!-- 顶部区域 -->
-        <!-- <div class="header"> -->
+        <div class="header">
             <!-- <div class="icon">
                 <i class="el-icon-caret-left"></i>
                 <i class="el-icon-caret-right"></i>
             </div> -->
-            <!-- <div class="header-right">
-                <span>当前时间:</span>
-                <span>欢迎:</span>
-            </div> -->
-        <!-- </div> -->
-        <el-menu
-            class="site-navbar__menu site-navbar__menu--right"
-            mode="horizontal">
-        
-            <el-menu-item index="1">
-                <template slot="title">
-                    <el-badge value="new">
-                    <icon-svg name="shezhi" class="el-icon-setting"></icon-svg>
-                    </el-badge>
-                </template>
-            </el-menu-item>
-
-        </el-menu>
+            <div class="header-right">
+                <div class="icon">
+                    <i class="el-icon-setting"></i>
+                </div>
+            </div>
+        </div>
 
         <!-- 内容区域 -->
         <div class="content">
@@ -42,14 +30,14 @@
 <style scoped>
 
 .header{
-    background: skyblue;
-    height: 50px;
-    line-height: 50px;
+    background: #EAE7B1;
+    height: 70px;
+    line-height: 70px;
     color: white;
     width: 100%;
 }
 .icon{
-        font-size: 28px;
+        font-size: 24px;
     }
 .header-right{
     color: black;
@@ -60,6 +48,7 @@
 }
 .content{
     padding-left:200px;
+    padding-top:35px;
 }
 
 </style>
