@@ -1,5 +1,8 @@
 <template>
     <div>
+        <div>
+            <Navbar></Navbar>
+        </div>
         <div class="menu">
             <Menu :isCollapse="isCollapse"></Menu>
         </div>
@@ -12,6 +15,7 @@
 <script>
 import Menu from './Menu'
 import Content from './Content'
+import Navbar from './Navbar'
 export default {
     data() {
         return{
@@ -21,7 +25,8 @@ export default {
     },
     components: {
         Menu,
-        Content
+        Content,
+        Navbar
     }
 }
 </script>
@@ -30,7 +35,7 @@ export default {
 .menu{
         position: fixed;
         left: 0;
-        top: 85px;
+        top: 70px;
         bottom: 0;
         width: 200px;
         background: #A6BB8D;
