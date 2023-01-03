@@ -1,21 +1,22 @@
 <template>
     <el-row>
-    <el-col :span="8" v-for="(o, index) in 1" :key="o" :offset="index > 0 ? 2 : 0">
-      <el-card :body-style="{ padding: '0px' }">
-        <img src="../../assets/images/erhu2.jpg" class="image">
-        <div style="padding: 14px;">
-          <span>二虎</span>
-          <div class="bottom clearfix">
-            <!-- <time class="time">{{ currentDate }}</time> -->
-            <el-button type="text" class="button">操作按钮</el-button>
-          </div>
-        </div>
-      </el-card>
-    </el-col>
-  </el-row>
+        <el-col :span="5" v-for="(o, index) in 1" :key="o" :offset="index > 0 ? 2 : 0">
+
+            <el-card class="box-card">
+                <div slot="header" class="clearfix">
+                    <span>二虎</span>
+                    <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+                </div>
+                <div v-for="o in 1" :key="o" class="text item">
+                    <img src="../../assets/images/erhu2.jpg" class="image">
+                </div>
+            </el-card>
+
+        </el-col>
+    </el-row>
 </template>
 
-</style>
+
   
 <script>
 export default {
@@ -30,33 +31,24 @@ export default {
 
   
 <style>
-.time {
-    font-size: 13px;
-    color: #999;
-}
+  .text {
+    font-size: 14px;
+  }
 
-.bottom {
-    margin-top: 13px;
-    line-height: 12px;
-}
+  .item {
+    margin-bottom: 18px;
+  }
 
-.button {
-    padding: 0;
-    float: right;
-}
-
-.image {
-    width: 100%;
-    display: block;
-}
-
-.clearfix:before,
-.clearfix:after {
+  .clearfix:before,
+  .clearfix:after {
     display: table;
     content: "";
-}
-
-.clearfix:after {
+  }
+  .clearfix:after {
     clear: both
-}
+  }
 
+  .box-card {
+    width: 480px;
+  }
+</style>
