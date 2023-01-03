@@ -20,7 +20,7 @@
 .content{
     /* padding-left:200px; */
     /* padding-top:20px; */
-    background: #f3f3e8;
+    background: #FAEEE7;
     margin-top: 3px;
     margin-left: 200px;
     height: 850px;

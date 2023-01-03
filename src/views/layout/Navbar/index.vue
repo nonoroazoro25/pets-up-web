@@ -34,10 +34,9 @@
 <style scoped>
 
 .header{
-    background: #EAE7B1;
+    background: #D9ADAD;
     height: 66px;
     line-height: 66px;
-    color: white;
     width: 102%;
     margin-top:-6px;
     margin-left: -10px;

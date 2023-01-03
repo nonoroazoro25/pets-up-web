@@ -61,12 +61,14 @@
 
       PetsLogin () {
         this.$axios.post('http://localhost:2020/api/login', {
-          username: 'ys',
-          password: 'qwer.1234'
+          username: this.dataForm.userName,
+          password: this.dataForm.password
         }).then(({data}) => {
           if (data && data.code === 0) {
             console.log('login success');
             this.$router.push({path: '/'})
+          } else {
+            Message.error("账号或密码错误")
           }
         })
       }

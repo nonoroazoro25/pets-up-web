@@ -38,7 +38,7 @@ export default {
         top: 70px;
         bottom: 0;
         width: 200px;
-        background: #A6BB8D;
+        background: #AD9D9D;
     }
 
 .content{
