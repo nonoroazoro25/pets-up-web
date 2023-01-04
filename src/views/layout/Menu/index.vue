@@ -29,9 +29,9 @@
           <span>配置</span>
           </template>
           <el-menu-item-group>
-          <el-menu-item index="/petsConfig/configFood">饮食</el-menu-item>
-          <el-menu-item index="/petsConfig/configDoctor">疫苗</el-menu-item>
-          <el-menu-item index="/petsConfig/configTag">tag</el-menu-item>
+          <el-menu-item index="/petsConfig/configFood">常用食物</el-menu-item>
+          <el-menu-item index="/petsConfig/configDoctor">驱虫记录</el-menu-item>
+          <el-menu-item index="/petsConfig/configTag">文章tag</el-menu-item>
           </el-menu-item-group>
       </el-submenu>
       </el-menu>
