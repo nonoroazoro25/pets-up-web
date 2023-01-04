@@ -17,7 +17,6 @@
 </template>
 
 
-  
 <script>
 export default {
   data() {
@@ -29,7 +28,7 @@ export default {
 
 </script>
 
-  
+
 <style>
   .text {
     font-size: 14px;

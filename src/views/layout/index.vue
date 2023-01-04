@@ -7,6 +7,9 @@
             <Menu :isCollapse="isCollapse"></Menu>
         </div>
         <div>
+            <BreadCrumb></BreadCrumb>
+        </div>
+        <div>
             <Content></Content>
         </div>
     </div>    
@@ -16,6 +19,7 @@
 import Menu from './Menu'
 import Content from './Content'
 import Navbar from './Navbar'
+import BreadCrumb from './BreadCrumb'
 export default {
     data() {
         return{
@@ -26,7 +30,8 @@ export default {
     components: {
         Menu,
         Content,
-        Navbar
+        Navbar,
+        BreadCrumb
     }
 }
 </script>
