@@ -35,8 +35,8 @@
 
 .header{
     background: #D9ADAD;
-    height: 66px;
-    line-height: 66px;
+    height: 40px;
+    line-height: 40px;
     width: 102%;
     margin-top:-6px;
     margin-left: -10px;
