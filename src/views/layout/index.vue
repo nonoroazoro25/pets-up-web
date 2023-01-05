@@ -40,7 +40,7 @@ export default {
 .menu{
         position: fixed;
         left: 0;
-        top: 70px;
+        top: 45px;
         bottom: 0;
         width: 200px;
         background: #AD9D9D;

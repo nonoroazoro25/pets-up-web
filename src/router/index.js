@@ -22,46 +22,73 @@ const routes = [
   {
     path: '/',
     component: layout,
+    meta: {
+      title: "首页"
+    },
     children: [
     {
       path: '/',
       name: 'home',
-      component:Home
+      component:Home,
+      meta: {
+        title: "最近记录"
+      },
     },
     {
       path: '/article',
       name: 'articleList',
-      component:articleList
+      component:articleList,
+      meta: {
+        title: "文章列表"
+      },
     },
     {
       path: '/cookRecord',
       name: 'cookRecord',
-      component:cookRecord
+      component:cookRecord,
+      meta: {
+        title: "食谱记录"
+      },
     },
     {
       path: '/petsList',
       name: 'petsList',
-      component:petsList
+      component:petsList,
+      meta: {
+        title: "宠物列表"
+      },
     },
     {
       path: '/petsConfig',
       name: 'petsConfig',
       component:petsConfig,
+      meta: {
+        title: "配置"
+      },
       children: [
         {
           path: '/petsConfig/configDoctor',
           name: 'configDoctor',
-          component:configDoctor
+          component:configDoctor,
+          meta: {
+            title: "驱虫记录"
+          },
         },
         {
           path: '/petsConfig/configFood',
           name: 'configFood',
-          component:configFood
+          component:configFood,
+          meta: {
+            title: "常用食物"
+          },
         },
         {
           path: '/petsConfig/configTag',
           name: 'configTag',
-          component:configTag
+          component:configTag,
+          meta: {
+            title: "文章tag"
+          },
         }
       ]
     }
