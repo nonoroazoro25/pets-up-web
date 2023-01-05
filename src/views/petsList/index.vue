@@ -21,8 +21,21 @@
 export default {
   data() {
     return {
-      currentDate: new Date()
+      petName: ""
     };
+  },
+
+  method:{
+    getPetsList(){
+      this.$axios.get('http://localhost:2020/api/pets/list').then(({data}) => {
+          if (data && data.code === 0) {
+            console.log(data);
+          } else {
+            Message.error("something error")
+          }
+        })
+    }
+
   }
 }
 
