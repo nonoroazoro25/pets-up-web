@@ -7,9 +7,6 @@
                 <i class="el-icon-caret-right"></i>
             </div> -->
             <div class="header-right">
-                <!-- <div class="nav_text">
-                    我的
-                </div> -->
                 <el-dropdown :hide-on-click="false">
                     <span class="el-dropdown-link">
                         我的<i class="el-icon-arrow-down el-icon--right"></i>

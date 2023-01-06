@@ -1,17 +1,16 @@
 <template>
     <el-row>
-        <el-col :span="5" v-for="(o, index) in 1" :key="o" :offset="index > 0 ? 2 : 0">
+        <el-col :span="5" v-for="(o, index) in petNameList" :key="o" :offset="index > 0 ? 2 : 0">
 
             <el-card class="box-card">
                 <div slot="header" class="clearfix">
-                    <span>二虎</span>
+                    <span>{{o}}</span>
                     <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
                 </div>
                 <div v-for="o in 1" :key="o" class="text item">
                     <img src="../../assets/images/erhu2.jpg" class="image">
                 </div>
             </el-card>
-
         </el-col>
     </el-row>
 </template>
@@ -19,16 +18,21 @@
 
 <script>
 export default {
+  
+
+
   data() {
     return {
-      petName: ""
+      petNameList: ""
     };
   },
 
   method:{
+    // todo
     getPetsList(){
       this.$axios.get('http://localhost:2020/api/pets/list').then(({data}) => {
           if (data && data.code === 0) {
+            this.petNameList = data
             console.log(data);
           } else {
             Message.error("something error")
