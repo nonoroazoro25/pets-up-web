@@ -23,7 +23,7 @@ export default {
 
   data() {
     return {
-      petNameList: ""
+      petNameList: ["二虎"]
     };
   },
 
