@@ -9,14 +9,18 @@ export const login = data => fetch('/api/login', data, 'POST');
 /**
  * 退出
  */
-
-export const signout = () => fetch('/admin/signout');
+// export const signout = () => fetch('/admin/signout');
 
 /**
  * 获取宠物列表
  */
-
 export const getPetsList = () => fetch('/api/pets/list');
+
+
+/**
+ * 获取宠物列表
+ */
+export const getFoodMaterial = () => fetch('/api/material/list');
 
 
 

@@ -25,7 +25,7 @@
         },
 
         created(){
-            console.log(this.$route.matched);
+            // console.log(this.$route.matched);
         
         }
         

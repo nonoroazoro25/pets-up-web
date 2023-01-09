@@ -22,7 +22,7 @@ export default {
 
   data() {
     return {
-      petNameList: ""
+      petNameList: []
     };
   },
 
@@ -31,16 +31,17 @@ export default {
   },
 
   methods: {
-    initData(){
+    async initData(){
       try{
-          const petsList = getPetsList();
-          console.log(petsList)
-          if (petsList.code == 0) {
-              this.petNameList = petsList.code;
+          const petsList = await getPetsList();
+          const petDetail = petsList.data.details
+          if (petsList.code == 200) {
+            for (let i = 0; i < petDetail.length; i++) {
+              this.petNameList.push(petDetail[i].name)
+            }
           }else{
               throw new Error('获取数据失败');
           }
-          this.getOrders();
       }catch(err){
           console.log('获取数据失败', err);
       }

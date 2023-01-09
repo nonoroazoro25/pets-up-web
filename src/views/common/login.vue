@@ -64,7 +64,6 @@
 			async PetsLogin() {
 					
           const res = await login({username: this.dataForm.username, password: this.dataForm.password})
-          console.log(res)
           if (res.code == 0) {
             this.$message({
                           type: 'success',

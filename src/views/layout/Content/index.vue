@@ -22,7 +22,7 @@
     /* padding-top:20px; */
     /* background: #FAEEE7; */
     margin-top: 20px;
-    margin-left: 200px;
+    margin-left: 220px;
     height: 850px;
 }
 
