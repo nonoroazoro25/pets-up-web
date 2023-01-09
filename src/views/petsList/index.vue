@@ -17,28 +17,34 @@
 
 
 <script>
+import {getPetsList} from '@/api/requestData'
 export default {
-  
-
 
   data() {
     return {
-      petNameList: ["二虎"]
+      petNameList: ""
     };
   },
 
-  method:{
-    // todo
-    getPetsList(){
-      this.$axios.get('http://localhost:2020/api/pets/list').then(({data}) => {
-          if (data && data.code === 0) {
-            this.petNameList = data
-            console.log(data);
-          } else {
-            Message.error("something error")
+  created(){
+    this.initData();
+  },
+
+  methods: {
+    initData(){
+      try{
+          const petsList = getPetsList();
+          console.log(petsList)
+          if (petsList.code == 0) {
+              this.petNameList = petsList.code;
+          }else{
+              throw new Error('获取数据失败');
           }
-        })
-    }
+          this.getOrders();
+      }catch(err){
+          console.log('获取数据失败', err);
+      }
+    },
 
   }
 }

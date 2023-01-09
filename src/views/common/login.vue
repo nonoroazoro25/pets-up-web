@@ -8,8 +8,8 @@
           <p class="title">登录</p>
           <el-form :model="dataForm" :rules="dataRule" @keyup.enter.native="dataFormSubmit()">
               <!-- 用户名 -->
-              <el-form-item prop="userName">
-                  <el-input v-model="dataForm.userName" ref="dataForm" prefix-icon="el-icon-user-solid"></el-input>
+              <el-form-item prop="username">
+                  <el-input v-model="dataForm.username" ref="dataForm" prefix-icon="el-icon-user-solid"></el-input>
               </el-form-item>
               <!-- 密码 -->
               <el-form-item prop="password">
@@ -26,16 +26,18 @@
     </div>
   </template>
   
-  <script>
+<script>
+  import {login} from '@/api/requestData' 
+
   export default {
     data () {
       return {
         dataForm: {
-          userName: '',
+          username: '',
           password: ''
         },
         dataRule: {
-          userName: [
+          username: [
             { required: true, message: '帐号不能为空', trigger: 'blur' }
           ],
           password: [
@@ -59,23 +61,25 @@
         })
       },
 
-      PetsLogin () {
-        this.$axios.post('http://localhost:2020/api/login', {
-          username: this.dataForm.userName,
-          password: this.dataForm.password
-        }).then(({data}) => {
-          if (data && data.code === 0) {
-            console.log('login success');
+			async PetsLogin() {
+					
+          const res = await login({username: this.dataForm.username, password: this.dataForm.password})
+          console.log(res)
+          if (res.code == 0) {
+            this.$message({
+                          type: 'success',
+                          message: '登录成功'
+                      });
             this.$router.push({path: '/'})
-          } else {
-            Message.error("账号或密码错误")
+          }else{
+            this.$message({
+                          type: 'error',
+                          message: res.message
+                      });
           }
-        })
-      }
+			},
 
     },
-
-    
 
     }
   

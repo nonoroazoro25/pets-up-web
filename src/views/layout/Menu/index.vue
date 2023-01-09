@@ -11,7 +11,7 @@
           <i class="el-icon-location"></i>
           <span slot="title">最近记录</span>
         </el-menu-item>
-        <el-menu-item index="/article">
+        <el-menu-item index="/article" >
           <i class="el-icon-document"></i>
           <span slot="title">文章列表</span>
         </el-menu-item>
@@ -45,25 +45,11 @@
       data(){
         return {
       }
-
       },
 
-
       method:{
-    // todo
-      getPetsList(){
-        this.$axios.get('http://localhost:2020/api/pets/list').then(({data}) => {
-            if (data && data.code === 0) {
-              this.petNameList = data
-              console.log(data);
-            } else {
-              Message.error("something error")
-            }
-          })
-      }
-
-  }
     }
+  }
 </script>
 
 <style>
