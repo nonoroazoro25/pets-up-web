@@ -8,40 +8,58 @@
         width="180">
       </el-table-column>
       <el-table-column
-        prop="name"
+        prop="dose"
         label="剂量"
         width="180">
       </el-table-column>
       <el-table-column
-        prop="address"
+        prop="remark"
         label="反应">
       </el-table-column>
     </el-table>
 </template>
 
 <script>
+    import {getDewormList} from '@/api/requestData'
+
     export default {
+
       data() {
         return {
-          tableData: [{
-            date: '2016-05-02',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄'
-          }, {
-            date: '2016-05-04',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1517 弄'
-          }, {
-            date: '2016-05-01',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1519 弄'
-          }, {
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1516 弄'
-          }]
+          tableData: []
         }
+      },
+
+      created(){
+        this.initData();
+      },
+  
+      methods: {
+        async initData(){
+          try{
+              const dewormList = await getDewormList();
+              const dewormListDetail = dewormList.data.details
+              console.log('dewormList', dewormList)
+              if (dewormList.code == 200) {
+
+                for (let i = 0; i < dewormListDetail.length; i++) {
+                  this.tableData.push({
+                    date: dewormListDetail[i].create_time,
+                    dose: dewormListDetail[i].dose,
+                    remark: dewormListDetail[i].remark
+                  })
+                }
+
+              }else{
+                  throw new Error('获取数据失败');
+              }
+          }catch(err){
+              console.log('获取数据失败', err);
+          }
+        },
+
       }
+
     }
 
 </script>

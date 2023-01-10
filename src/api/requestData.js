@@ -6,21 +6,25 @@ import fetch from '@/config/fetch'
 
 export const login = data => fetch('/api/login', data, 'POST');
 
-/**
- * 退出
- */
+//  退出
 // export const signout = () => fetch('/admin/signout');
 
-/**
- * 获取宠物列表
- */
+
+//  获取宠物列表
 export const getPetsList = () => fetch('/api/pets/list');
 
-
-/**
- * 获取宠物列表
- */
+// 获取食物原料列表
 export const getFoodMaterial = () => fetch('/api/material/list');
+
+// 获取食谱
+export const getRecipeList = () => fetch('/api/recipe/list');
+
+// 获取tag
+export const getTagList = () => fetch('/api/tag/list');
+
+// 获取驱虫记录
+export const getDewormList = () => fetch('/api/deworm/list');
+
 
 
 

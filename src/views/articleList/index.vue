@@ -2,7 +2,9 @@
     <div>
         <!-- <h2>系统首页</h2> -->
         <el-collapse v-model="activeName" accordion>
-            <el-collapse-item title="一致性 Consistency" name="1">
+            <el-collapse-item 
+            title="一致性 Consistency" 
+            name="1">
                 <div>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</div>
                 <div>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</div>
             </el-collapse-item>
@@ -24,12 +26,42 @@
 </template>
   
 <script>
+// import {getFoodMaterial} from '@/api/requestData'
 export default {
     data() {
       return {
-        activeName: '1'
+        activeName: '1',
+        articleList: []
       };
-    }
+    },
+
+//     created(){
+//     this.initData();
+//   },
+  
+//     methods: {
+//         async initData(){
+//         try{
+//             const foodList = await getFoodMaterial();
+//             const foodListDetail = foodList.data.details
+//             console.log('foodList', foodList)
+//             if (foodList.code == 200) {
+
+//                 for (let i = 0; i < foodListDetail.length; i++) {
+//                 this.tableData.push({
+//                     name: foodListDetail[i].name
+//                 })
+//                 }
+
+//             }else{
+//                 throw new Error('获取数据失败');
+//             }
+//         }catch(err){
+//             console.log('获取数据失败', err);
+//         }
+//         },
+
+//     }
   }
 </script>
 

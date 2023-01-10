@@ -8,11 +8,36 @@
             {{'列表内容 ' + o }}
         </div>
     </el-card>
-    
 </template>
 
 <script>
+import {getRecipeList} from '@/api/requestData'
+
 export default {
+  data() {
+        return {
+
+        }
+      },
+
+  created(){
+    this.initData();
+  },
+  
+  methods: {
+    async initData(){
+      try{
+          const frecipeList = await getRecipeList();
+          if (foodList.code == 200) {
+
+          }else{
+              throw new Error('获取数据失败');
+          }
+      }catch(err){
+          console.log('获取数据失败', err);
+      }
+    },
+  }
     
 }
 

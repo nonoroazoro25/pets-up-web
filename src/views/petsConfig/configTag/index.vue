@@ -1,20 +1,13 @@
 <template>
     <div>
-        <!-- <el-tag
-        v-for="tag in tags"
+        <el-tag
+        v-for="tag in dynamicTags"
         :key="tag.name"
         closable
         :type="tag.type">
         {{tag.name}}
-        </el-tag> -->
-        <el-tag
-        :key="tag"
-        v-for="tag in dynamicTags"
-        closable
-        :disable-transitions="false"
-        @close="handleClose(tag)">
-        {{tag}}
         </el-tag>
+
         <el-input
         class="input-new-tag"
         v-if="inputVisible"
@@ -31,14 +24,22 @@
 </template>
 
 <script>
+  import {getTagList} from '@/api/requestData'
+
   export default {
     data() {
       return {
-        dynamicTags: ['标签一', '标签二', '标签三'],
+        dynamicTags: [],
         inputVisible: false,
         inputValue: ''
       };
     },
+
+    created(){
+    this.initData();
+    },
+
+
     methods: {
       handleClose(tag) {
         this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
@@ -58,7 +59,29 @@
         }
         this.inputVisible = false;
         this.inputValue = '';
+      },
+
+      async initData(){
+      try{
+          const TagList = await getTagList();
+          const TagListDetail = TagList.data.details
+          if (TagList.code == 200) {
+              for (let i = 0; i < TagListDetail.length; i++) {
+                 this.dynamicTags.push({
+                  name: TagListDetail[i].type,
+                  type: TagListDetail[i].type
+                })
+              }
+
+          }else{
+              throw new Error('获取数据失败');
+          }
+      }catch(err){
+          console.log('获取数据失败', err);
       }
+    },
+
+
     }
   }
 
