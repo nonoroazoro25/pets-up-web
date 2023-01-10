@@ -17,6 +17,7 @@ import petsConfig from '@/views/petsConfig'
 import configDoctor from '@/views/petsConfig/configDoctor'
 import configFood from '@/views/petsConfig/configFood'
 import configTag from '@/views/petsConfig/configTag'
+import userDetail from '@/views/user'
 
 
 const routes = [
@@ -27,6 +28,14 @@ const routes = [
       title: "首页"
     },
     children: [
+    {
+      path: '/userDetail',
+      name: 'userDetail',
+      component:userDetail,
+      meta: {
+        title: "userDetail"
+      },
+    },
     {
       path: '/',
       name: 'home',

@@ -40,7 +40,6 @@
       try{
           const foodList = await getFoodMaterial();
           const foodListDetail = foodList.data.details
-          console.log('foodList', foodList)
           if (foodList.code == 200) {
 
             for (let i = 0; i < foodListDetail.length; i++) {

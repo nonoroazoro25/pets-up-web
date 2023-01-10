@@ -1,10 +1,10 @@
 <template>
 <el-row>
-  <el-col :span="8" v-for="(o, index) in petNameList" :key="o" :offset="index > 0 ? 2 : 0">
+  <el-col :span="8" v-for="(pet, index) in petNameList" :key="index" :offset="index > 0 ? 2 : 0">
     <el-card :body-style="{ padding: '0px' }">
       <img src="@/assets/images/erhu.jpg" class="image">
       <div style="padding: 14px;">
-        <span>{{o.name}}</span>
+        <span>{{pet.name}}</span>
         <div class="bottom clearfix">
           <!-- <time class="time">{{  }}</time> -->
           <el-button type="text" class="button">操作按钮</el-button>

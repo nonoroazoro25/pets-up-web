@@ -39,7 +39,6 @@
           try{
               const dewormList = await getDewormList();
               const dewormListDetail = dewormList.data.details
-              console.log('dewormList', dewormList)
               if (dewormList.code == 200) {
 
                 for (let i = 0; i < dewormListDetail.length; i++) {

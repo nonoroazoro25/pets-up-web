@@ -34,7 +34,6 @@ export default {
         try{
             const articleList = await getArticleList();
             const articleListDetail = articleList.data.details
-            console.log('articleList', articleList)
             if (articleList.code == 200) {
                 this.articleList = articleListDetail
             }else{

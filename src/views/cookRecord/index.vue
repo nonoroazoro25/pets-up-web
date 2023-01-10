@@ -1,6 +1,6 @@
 <template>
   <el-row>
-  <el-col :span="8" v-for="(o, index) in recipeList" :key="o" :offset="index > 0 ? 2 : 0">
+  <el-col :span="8" v-for="(o, index) in recipeList" :key="index" :offset="index > 0 ? 2 : 0">
     <el-card :body-style="{ padding: '0px' }">
       <img src="@/assets/images/avatar.png" class="image">
       <div style="padding: 14px;">
@@ -36,7 +36,6 @@ export default {
       try{
           const recipeList = await getRecipeList();
           const recipeListDetail = recipeList.data.details;
-          console.log('recipe', recipeList)
           if (recipeList.code == 200) {
             this.recipeList = recipeListDetail
 
