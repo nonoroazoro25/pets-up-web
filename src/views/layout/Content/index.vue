@@ -21,7 +21,7 @@
     /* padding-left:200px; */
     /* padding-top:20px; */
     /* background: #FAEEE7; */
-    margin-top: 20px;
+    margin-top: 60px;
     margin-left: 220px;
     height: 850px;
 }

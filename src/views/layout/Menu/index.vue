@@ -23,6 +23,10 @@
           <i class="el-icon-edit"></i>
           <span slot="title">食谱记录</span>
         </el-menu-item>
+        <el-menu-item index="/monthRecord">
+          <i class="el-icon-circle-plus"></i>
+          <span slot="title">每月photo</span>
+        </el-menu-item>
         <el-submenu index="/petsConfig">
           <template slot="title">
           <i class="el-icon-setting"></i>

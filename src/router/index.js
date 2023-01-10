@@ -12,6 +12,7 @@ Vue.use(Router)
 import articleList from '@/views/articleList'
 import cookRecord from '@/views/cookRecord'
 import petsList from '@/views/petsList'
+import monthRecord from '@/views/monthRecord'
 import petsConfig from '@/views/petsConfig'
 import configDoctor from '@/views/petsConfig/configDoctor'
 import configFood from '@/views/petsConfig/configFood'
@@ -56,6 +57,14 @@ const routes = [
       component:petsList,
       meta: {
         title: "宠物列表"
+      },
+    },
+    {
+      path: '/monthRecord',
+      name: 'monthRecord',
+      component:monthRecord,
+      meta: {
+        title: "monthRecord"
       },
     },
     {

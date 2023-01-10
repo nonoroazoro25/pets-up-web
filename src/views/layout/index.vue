@@ -10,6 +10,9 @@
             <BreadCrumb></BreadCrumb>
         </div>
         <div>
+            <button_nav></button_nav>
+        </div>
+        <div>
             <Content></Content>
         </div>
     </div>    
@@ -20,6 +23,7 @@ import Menu from './Menu'
 import Content from './Content'
 import Navbar from './Navbar'
 import BreadCrumb from './BreadCrumb'
+import button_nav from './button_nav'
 export default {
     data() {
         return{
@@ -31,7 +35,8 @@ export default {
         Menu,
         Content,
         Navbar,
-        BreadCrumb
+        BreadCrumb,
+        button_nav
     }
 }
 </script>
