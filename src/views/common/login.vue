@@ -62,14 +62,14 @@
       },
 
 			async PetsLogin() {
-					
           const res = await login({username: this.dataForm.username, password: this.dataForm.password})
           if (res.code == 0) {
             this.$message({
                           type: 'success',
                           message: '登录成功'
                       });
-            this.$router.push({path: '/'})
+            this.$router.push({path: '/'});
+            console.log('res', res)
           }else{
             this.$message({
                           type: 'error',
