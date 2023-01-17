@@ -10,6 +10,7 @@ import Home from '@/views/home'
 Vue.use(Router)
 
 import articleList from '@/views/articleList'
+import articleForm from '@/views/articleList/createArticle'
 import cookRecord from '@/views/cookRecord'
 import petsList from '@/views/petsList'
 import monthRecord from '@/views/monthRecord'
@@ -51,6 +52,17 @@ const routes = [
       meta: {
         title: "文章列表"
       },
+      children: [
+        {
+          path: '/articleList/create',
+          name: 'articleForm',
+          component:articleForm,
+          meta: {
+            title: "新建"
+          },
+        }
+
+      ]
     },
     {
       path: '/cookRecord',
@@ -142,6 +154,13 @@ const routes = [
 //     }
 //   }
 // })
+
+
+const original = VueRouter.prototype.push
+
+VueRouter.prototype.push = function push(location){
+  return original.call(this, location).catch(err=>err)
+}
 
 const router = new VueRouter({
   mode: 'history',

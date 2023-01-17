@@ -13,6 +13,8 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@wangeditor/editor": "^5.1.23",
+    "@wangeditor/editor-for-vue": "^1.0.2",
     "axios": "^1.2.1",
     "element": "^0.1.4",
     "element-ui": "^2.15.12",

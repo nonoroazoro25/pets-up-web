@@ -1,5 +1,11 @@
 <template>
     <div>
+        <el-row>
+        <div class="btn">
+            <el-button type="warning" round @click="btn_func">新建</el-button>
+        </div>
+
+    </el-row>
         <!-- <h2>系统首页</h2> -->
         <el-collapse v-model="activeName" accordion>
             <el-collapse-item 
@@ -44,11 +50,17 @@ export default {
         }
         },
 
+        btn_func(){
+            this.$router.push({path: '/articleList/create'});
+        }
+
     }
   }
 </script>
 
 <style scoped>
-
+.btn{
+    padding-bottom: 20px;
+}
 </style>
 
